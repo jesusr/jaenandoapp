@@ -9,6 +9,7 @@
   "devDependencies": {
     "angular": "1.4.4",
     "angular-translate": "*",
+    "compass-mixins": "^0.12.7",
     "grunt": "^0.4.5",
     "grunt-angular-annotator": "*",
     "grunt-angular-templates": "*",
@@ -31,4 +32,3 @@
     "socket.io-client": "*"
   }
 }
-

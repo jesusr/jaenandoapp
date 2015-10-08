@@ -107,6 +107,11 @@ module.exports = function(grunt) {
         src: 'images/**',
         dest: 'dist',
         expand: true
+      },
+      dist: {
+        src: 'dist/**',
+        dest: 'www/',
+        expand: true
       }
     },
     jshint: {
@@ -190,6 +195,6 @@ module.exports = function(grunt) {
   grunt.registerTask('dist', 'Task to create a distribution release.', [
     'clean', 'version', 'distcss', 'distjs', 'copy'
   ]);
-  grunt.registerTask('default', ['dist', 'notify:dist']);
+  grunt.registerTask('default', ['dist', 'notify:dist', 'watch:scripts']);
 };
 
