@@ -1,0 +1,14 @@
+header {
+    .container {
+        .menu-list {
+            width: calc(100% - 150px);
+            margin: 15px auto;
+            position: absolute;
+            right: 0;
+            top: 15px;
+            ul {
+                @include horizontal-list
+            }
+        }
+    }
+}
