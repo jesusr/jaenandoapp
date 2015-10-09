@@ -1,10 +1,10 @@
 {
-  "name": "frae-maps",
+  "name": "jaenandoApp",
   "version": "0.0.1",
-  "description": "Andalucía Emprende Maps",
+  "description": "Jaenando App",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Emergya/frae-maps.git"
+    "url": "https://github.com/jesusr/jaenandoapp.git"
   },
   "devDependencies": {
     "angular": "1.4.4",

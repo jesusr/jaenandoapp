@@ -112,6 +112,18 @@ module.exports = function(grunt) {
         src: 'dist/**',
         dest: 'www/',
         expand: true
+      },
+      angular: {
+        src: 'bower_components/angular/angular.min.js',
+        dest: 'www/libs/angular.min.js',
+        expand: false,
+        flatten: false
+      },
+      jquery: {
+        src: 'bower_components/jquery/dist/jquery.min.js',
+        dest: 'www/libs/jquery.min.js',
+        expand: false,
+        flatten: false
       }
     },
     jshint: {
@@ -195,6 +207,6 @@ module.exports = function(grunt) {
   grunt.registerTask('dist', 'Task to create a distribution release.', [
     'clean', 'version', 'distcss', 'distjs', 'copy'
   ]);
-  grunt.registerTask('default', ['dist', 'notify:dist', 'watch:scripts']);
+  grunt.registerTask('default', ['dist', 'notify:dist', 'watch:scripts', 'watch:sass']);
 };
 

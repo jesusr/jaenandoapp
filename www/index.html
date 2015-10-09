@@ -2,40 +2,28 @@
 <html>
 
 <head>
-  <title>ANGULAR WIDGET TEST</title>
+  <title>Jaenando</title>
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap-css/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="../bower_components/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="../bower_components/angucomplete-alt/angucomplete-alt.css">
-  <link rel="stylesheet" type="text/css" href="libs/Map-Icons-master/css/map-icons.css">
-  <link rel="stylesheet" type="text/css" href="../dist/frae-maps.dist.min.css">
+  <link rel="stylesheet" type="text/css" href="../dist/jaenandoapp.dist.min.css">
 </head>
 
 <body ng-app="app">
   <header id="header">
     <div class="container">
-      <!-- <div class="top-menu btn btn-default">
-  <div class="sign-in-button">Inicia sesión</div>
-</div>
- -->
       <div class="logo">
-        <img src="../dist/images/header/Andalucia-emprende-Logo-380x380.png">
+        <h1><a href="">Jaenando</a></h1>
       </div>
       <nav-menu></nav-menu>
     </div>
   </header>
   <section id="content">
-    <div id="mapContainer">
-      <snw-map></snw-map>
-    </div>
+    <ng-view></ng-view>
   </section>
   <footer></footer>
-  <script src="../bower_components/jquery/dist/jquery.min.js"></script>
-  <script src="libs/richmarker/richmarker.js"></script>
-  <script src="../bower_components/angular/angular.min.js"></script>
-  <script src="../bower_components/angucomplete-alt/angucomplete-alt.js"></script>
-  <script src="../dist/frae-maps.dist.js"></script>
+  <script src="libs/jquery.min.js"></script>
+  <script src="libs/angular.min.js"></script>
+  <script src="dist/jaenandoapp.dist.js"></script>
   <!-- Live reload support -->
   <script src="//localhost:35729/livereload.js"></script>
 </body>
