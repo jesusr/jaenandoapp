@@ -1,0 +1,21 @@
+ #content {
+     .static-filter {
+         color: hsl(0, 100%, 100%);
+         background-color: hsl(0, 0%, 50%);
+         opacity: 0.7;
+         position: absolute;
+         top: 0;
+         width: 100%;
+         z-index: 10;
+         .icons-menu {
+             margin: 4px 50px 2px 0px;
+             font-size: 22px;
+             span {
+                 margin-right: 15px;
+             }
+             span:hover {
+                 color: black;
+             }
+         }
+     }
+ }
