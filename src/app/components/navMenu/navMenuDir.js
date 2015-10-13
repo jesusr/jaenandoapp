@@ -20,12 +20,12 @@
         });
       },
       controller: 'navMenuCtrl',
-      templateUrl: '/app/components/navMenu/navMenu.html',
+      templateUrl: '/dist/tpls/navMenu/navMenu.html',
       scope: {}
     };
   };
 
-  angular.module('navMenu')
+  angular.module('app.navMenu')
     .directive('navMenu', ddo);
 })();
 

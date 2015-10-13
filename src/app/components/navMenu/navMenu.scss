@@ -1,13 +1,31 @@
-header {
+header { 
+    font-family: Open Sans, Helvetiva, Arial, sans-serif;
     .container {
         .menu-list {
-            width: calc(100% - 150px);
-            margin: 15px auto;
+            width: calc(100% - 250px);
+            margin: 0 auto;
             position: absolute;
             right: 0;
-            top: 15px;
+            top: 0;
+            margin-left: $header-inner-margin;
+            border-left: 2px solid #aaa;
             ul {
-                @include horizontal-list
+                @include horizontal-list;
+                padding-left: $header-inner-margin;
+                li {
+                    line-height: 50px;
+                    text-align: left;
+                    margin-right: 50px;
+                    a {
+                        font-weight: 500;
+                        font-size: 1.2em;
+                        text-decoration: none;
+                        color: #28400C;
+                        &:hover {
+                            color: rgba(#28400C, .7);
+                        }
+                    }
+                }
             }
         }
     }

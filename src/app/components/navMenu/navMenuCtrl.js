@@ -23,6 +23,6 @@
     init();
   };
 
-  angular.module('navMenu').controller('navMenuCtrl', navMenuCtrl);
+  angular.module('app.navMenu').controller('navMenuCtrl', navMenuCtrl);
 })();
 
