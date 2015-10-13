@@ -1,5 +1,6 @@
 @import '../../../node_modules/compass-mixins/lib/_compass.scss';
 @import '_variables.scss';
+@import 'partial/_fonts.scss';
 @import '_mixins.scss';
 
 @include global-reset;
