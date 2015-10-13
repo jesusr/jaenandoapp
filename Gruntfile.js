@@ -105,7 +105,13 @@ module.exports = function(grunt) {
       img: {
         cwd: 'src/assets/',
         src: 'images/**',
-        dest: 'dist',
+        dest: 'dist/',
+        expand: true
+      },
+      fonts: {
+        cwd: 'src/assets/',
+        src: 'fonts/**',
+        dest: 'dist/',
         expand: true
       },
       dist: {
@@ -113,15 +119,9 @@ module.exports = function(grunt) {
         dest: 'www/',
         expand: true
       },
-      angular: {
-        src: 'bower_components/angular/angular.min.js',
-        dest: 'www/libs/angular.min.js',
-        expand: false,
-        flatten: false
-      },
-      jquery: {
-        src: 'bower_components/jquery/dist/jquery.min.js',
-        dest: 'www/libs/jquery.min.js',
+      tpls: {
+        src: 'src/app/components/**/*.html',
+        dest: 'dist/tpls/',
         expand: false,
         flatten: false
       }
@@ -150,15 +150,15 @@ module.exports = function(grunt) {
         tasks: ['distjs', 'notify:watch'],
         options: {
           spawn: false,
-          livereload: true
+          livereload: false
         }
       },
       sass: {
-        files: ['src/**/*.scss'],
+        files: ['src/**/**/*.scss', 'src/app/components/**/*.scss'],
         tasks: ['distcss', 'notify:watch'],
         options: {
           spawn: false,
-          livereload: true
+          livereload: false
         }
       },
       version: {
@@ -180,10 +180,35 @@ module.exports = function(grunt) {
           message: 'Files created by dist succesfully!'
         }
       }
+    },
+    concurrent: {
+      target: {
+        tasks: ['watch:scripts', 'watch:sass', 'watch:version', 'shell'],
+        options: {
+          logConcurrentOutput: true
+        }
+      },
+      conc: {
+        tasks: ['watch:scripts', 'watch:sass', 'watch:version'],
+        options: {
+          logConcurrentOutput: true
+        }
+      }
+    },
+    shell: {
+      options: {
+        stderr: false
+      },
+      target: {
+        command: 'cd www && startserver 8085'
+      }
     }
   });
 
   // ----- PLUGINS ------
+  grunt.loadNpmTasks('grunt-bower-concat');
+  grunt.loadNpmTasks('grunt-shell');
+  grunt.loadNpmTasks('grunt-concurrent');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-version');
   grunt.loadNpmTasks('grunt-libsass');
@@ -201,12 +226,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-jscs');
   // ----- OTHER TASKS ------
   grunt.registerTask('distjs', [
-    'jshint', 'jscs', 'ngtemplates', 'concat', 'ngAnnotate', 'uglify'
+    'jshint', 'jscs', 'ngtemplates', 'concat', 'ngAnnotate', 'uglify', 'copy'
   ]);
-  grunt.registerTask('distcss', ['sass_globbing:main', 'sass', 'cssmin']);
+  grunt.registerTask('distcss', ['sass_globbing:main', 'sass', 'cssmin', 'copy']);
   grunt.registerTask('dist', 'Task to create a distribution release.', [
-    'clean', 'version', 'distcss', 'distjs', 'copy'
+    'clean', 'version', 'distcss', 'distjs'
   ]);
-  grunt.registerTask('default', ['dist', 'notify:dist', 'watch:scripts', 'watch:sass']);
+  grunt.registerTask('default', ['concurrent:target', 'dist', 'notify:dist']);
 };
 

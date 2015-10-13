@@ -17,7 +17,8 @@
     "bootstrap-css": "*",
     "font-awesome": "*",
     "angucomplete-alt": "~2.0.0",
-    "jquery": "*"
+    "jquery": "*",
+    "angular-route": "~1.4.7"
   },
   "exportOverrides": {
     "bootstrap-css": {
