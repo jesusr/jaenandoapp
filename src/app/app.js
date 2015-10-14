@@ -5,6 +5,7 @@
     'app.services',
     'app.navMenu',
     'app.home',
+    'app.map',
     // vendors
     'ngRoute'
   ]);

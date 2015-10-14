@@ -1,0 +1,11 @@
+#mapContainer {
+  height: 480px;
+  position: relative;
+  width: 50%;
+  svg {
+    width: 70%;
+    height: 327px;
+    transform: scale(1.4);
+    transform-origin: 0 0;
+  }
+}

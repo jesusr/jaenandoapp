@@ -2,15 +2,17 @@
   'use strict';
   var homeCtrl, config;
 
-  homeCtrl = function($scope) {
-    $scope.s = 'asdadadasdadsas';
+  homeCtrl = function($scope, podcastServ) {
+    podcastServ.load(function(data) {
+      $scope.data = data;
+    });
   };
 
   config = function($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: '/dist/tpls/src/app/components/home/home.html',
-        controller: 'homeCtrl'
+        templateUrl: '/app/components/home/home.html',
+        controller: homeCtrl
       })
       .otherwise('/');
   };

@@ -42,7 +42,7 @@ module.exports = function(grunt) {
     'ngtemplates': {
       dist: {
         src: 'src/app/**/*.html',
-        dest: 'tmp/templates.js',
+        dest: 'www/dist/templates.js',
         options: {
           module: 'app',
           url: function(url) {
@@ -118,12 +118,6 @@ module.exports = function(grunt) {
         src: 'dist/**',
         dest: 'www/',
         expand: true
-      },
-      tpls: {
-        src: 'src/app/components/**/*.html',
-        dest: 'dist/tpls/',
-        expand: false,
-        flatten: false
       }
     },
     jshint: {
@@ -202,6 +196,18 @@ module.exports = function(grunt) {
       target: {
         command: 'cd www && startserver 8085'
       }
+    },
+    'bower_concat': {
+      all: {
+        dest: 'dist/libs.js',
+        cssDest: 'dist/libs.css',
+        dependencies: {
+          'angular-route': 'angular'
+        },
+        bowerOptions: {
+          relative: false
+        }
+      }
     }
   });
 
@@ -226,12 +232,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-jscs');
   // ----- OTHER TASKS ------
   grunt.registerTask('distjs', [
-    'jshint', 'jscs', 'ngtemplates', 'concat', 'ngAnnotate', 'uglify', 'copy'
+    'jshint', 'jscs', 'ngtemplates', 'concat', 'ngAnnotate', 'uglify', 'bower_concat', 'copy'
   ]);
   grunt.registerTask('distcss', ['sass_globbing:main', 'sass', 'cssmin', 'copy']);
   grunt.registerTask('dist', 'Task to create a distribution release.', [
     'clean', 'version', 'distcss', 'distjs'
   ]);
-  grunt.registerTask('default', ['concurrent:target', 'dist', 'notify:dist']);
+  grunt.registerTask('default', ['dist', 'notify:dist', 'concurrent:target']);
 };
 

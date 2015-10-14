@@ -14,9 +14,6 @@
   ],
   "dependencies": {
     "angular": "*",
-    "bootstrap-css": "*",
-    "font-awesome": "*",
-    "angucomplete-alt": "~2.0.0",
     "jquery": "*",
     "angular-route": "~1.4.7"
   },

@@ -20,7 +20,7 @@
         });
       },
       controller: 'navMenuCtrl',
-      templateUrl: '/dist/tpls/navMenu/navMenu.html',
+      templateUrl: '/app/components/navMenu/navMenu.html',
       scope: {}
     };
   };
