@@ -6,6 +6,7 @@
     'app.navMenu',
     'app.home',
     'app.map',
+    'app.podcast',
     // vendors
     'ngRoute'
   ]);

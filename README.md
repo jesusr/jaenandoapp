@@ -1,2 +1,3 @@
-# frae-maps
-frae-maps
+# Jaenando App
+
+Based on Angular.js

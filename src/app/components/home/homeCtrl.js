@@ -2,11 +2,7 @@
   'use strict';
   var homeCtrl, config;
 
-  homeCtrl = function($scope, podcastServ) {
-    podcastServ.load(function(data) {
-      $scope.data = data;
-    });
-  };
+  homeCtrl = function() {};
 
   config = function($routeProvider) {
     $routeProvider
