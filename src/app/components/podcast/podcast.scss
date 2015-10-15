@@ -19,7 +19,7 @@
         font-size: 1.2em;
         font-weight: 500;
         background-color: rgba($primary-color, 1);
-        @include transition;
+        transition: 1s all ease-in-out;
         span {
           display: table-cell;
           vertical-align: middle;
@@ -33,28 +33,93 @@
     }
   }
   .podcastDir {
-    &:nth-child(2) h2 a{
-      background-color: rgba(#417505, 0.77);
+    &:nth-child(2) {
+      &:hover {
+        h2 a {
+          background-color: rgba(#417505, 0.90);
+          transition: 1s all ease-in-out;      
+        }
+      }
+      h2 a{
+        background-color: rgba(#417505, 0.77);
+      }
     }
-    &:nth-child(3) h2 a{
-      background-color: rgba(#417505, 0.77);
+    &:nth-child(3) {
+      &:hover {
+        h2 a {
+          background-color: rgba(#417505, 0.90);
+          transition: 1s all ease-in-out;  
+        }
+      }
+      h2 a{
+        background-color: rgba(#417505, 0.77);
+      }
     }
-    &:nth-child(4) h2 a{
-      background-color: rgba(#61B400, 0.77);
+    &:nth-child(4) {
+      &:hover {
+        h2 a {
+          background-color: rgba(#61B400, 0.90);
+          transition: 1s all ease-in-out;  
+        }
+      }
+      h2 a{
+        background-color: rgba(#61B400, 0.77);
+      }
     }
-    &:nth-child(5) h2 a{
-      background-color: rgba(#90C751, 0.77);
+    &:nth-child(5) {
+      &:hover {
+        h2 a {
+          background-color: rgba(#90C751, 0.90);
+          transition: 1s all ease-in-out;  
+        }
+      }
+      h2 a{
+        background-color: rgba(#90C751, 0.77);
+      }
     }
-    &:nth-child(6) h2 a{
+    &:nth-child(6) {
+      &:hover {
+        h2 a {
+          background-color: rgba(#90C751, 0.90);
+          transition: 1s all ease-in-out;
+        }
+      }
+      h2 a{
+        background-color: rgba(#90C751, 0.77);
+      }
+    } 
+    &:nth-child(7) {
+      &:hover {
+        h2 a {
+         background-color: rgba(#417505, 0.90);
+         transition: 1s all ease-in-out;   
+        }
+      }
+      h2 a{
+        background-color: rgba(#417505, 0.77);
+      }
     }
-    &:nth-child(7) h2 a{
-      background-color: rgba(#417505, 0.77);
+    &:nth-child(8) {
+      &:hover {
+        h2 a {
+          background-color: rgba(#417505, 0.90);
+          transition: 1s all ease-in-out;  
+        }
+      }
+      h2 a{
+        background-color: rgba(#417505, 0.77);
+      }
     }
-    &:nth-child(8) h2 a{
-      background-color: rgba(#417505, 0.77);
-    }
-    &:nth-child(9) h2 a{
-      background-color: rgba(#90C751, 0.77);
+    &:nth-child(9) {
+      &:hover {
+        h2 a {
+          background-color: rgba(#90C751, 0.90);
+          transition: 1s all ease-in-out;  
+        }
+      }
+      h2 a{
+        background-color: rgba(#90C751, 0.77);
+      }
     }
   }
   // .podcastDir {
