@@ -1,0 +1,86 @@
+.podcastList {
+  font-family: Open Sans, Helvetiva, Arial, sans-serif;
+  .podcast.box {
+    height: $map-height/2;
+    width: $map-height/2;
+    position: relative;
+    border: transparent 5px solid;
+    box-sizing: border-box;
+    display: inline-block;
+    h2 {
+      a {
+        display: table;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        color: white;
+        text-decoration: none;
+        font-size: 1.2em;
+        font-weight: 500;
+        background-color: rgba($primary-color, 1);
+        @include transition;
+        span {
+          display: table-cell;
+          vertical-align: middle;
+        }
+      }
+    }
+    &:hover {
+       
+    }
+    &:first-child {
+    }
+  }
+  .podcastDir {
+    &:nth-child(2) h2 a{
+      background-color: rgba(#417505, 0.77);
+    }
+    &:nth-child(3) h2 a{
+      background-color: rgba(#417505, 0.77);
+    }
+    &:nth-child(4) h2 a{
+      background-color: rgba(#61B400, 0.77);
+    }
+    &:nth-child(5) h2 a{
+      background-color: rgba(#90C751, 0.77);
+    }
+    &:nth-child(6) h2 a{
+    }
+    &:nth-child(7) h2 a{
+      background-color: rgba(#417505, 0.77);
+    }
+    &:nth-child(8) h2 a{
+      background-color: rgba(#417505, 0.77);
+    }
+    &:nth-child(9) h2 a{
+      background-color: rgba(#90C751, 0.77);
+    }
+  }
+  // .podcastDir {
+  //   &:nth-child(2) h2 a{
+  //     background-color: rgba($primary-color,(random(50)+50)/100);
+  //   }
+  //   &:nth-child(3) h2 a{
+  //     background-color: rgba($primary-color,(random(50)+50)/100);
+  //   }
+  //   &:nth-child(4) h2 a{
+  //     background-color: rgba($primary-color,(random(50)+50)/100);
+  //   }
+  //   &:nth-child(5) h2 a{
+  //     background-color: rgba($primary-color,(random(50)+50)/100);
+  //   }
+  //   &:nth-child(6) h2 a{
+  //     background-color: rgba($primary-color,(random(50)+50)/100);
+  //   }
+  //   &:nth-child(7) h2 a{
+  //     background-color: rgba($primary-color,(random(50)+50)/100);
+  //   }
+  //   &:nth-child(8) h2 a{
+  //     background-color: rgba($primary-color,(random(50)+50)/100);
+  //   }
+  //   &:nth-child(9) h2 a{
+  //     background-color: rgba($primary-color,(random(50)+50)/100);
+  //   }
+  // }
+}
