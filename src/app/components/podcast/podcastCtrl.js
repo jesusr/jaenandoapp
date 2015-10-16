@@ -1,3 +1,4 @@
+/* global console */
 (function() {
   'use strict';
   var podcastCtrl = function($scope, podcastServ) {
@@ -5,7 +6,11 @@
     podcastServ.load(function(data) {
       $scope.data = data;
     });
-    $scope.setHighlight = function(p, n) {
+    $scope.highlighted = null;
+    $scope.setElementHigh = function(p) {
+      $scope.highlighted = p;
+    };
+    $scope.setHighlight = function(p) {
       var elem, elems, l, i, toggle;
       elem = document.querySelector('.' + p.slug);
       elems = document.querySelectorAll('.podcast');
@@ -16,10 +21,13 @@
           return n !== 'highlight';
         }).join(' ');
       }
-
-      if (n !== null && !toggle) {
+      if (!toggle) {
         elem.className += ' highlight';
+        $scope.setElementHigh(p);
+      } else {
+        $scope.setElementHigh(null);
       }
+      console.log($scope.highlighted);
     };
     init();
   };

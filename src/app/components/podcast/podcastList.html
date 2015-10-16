@@ -1,7 +1,8 @@
 <div class="podcastList">
-    <div class="podcastHighlight" ng-class="p ? 'open' : 'closed'">
+{{highlighted}}
+    <div class="podcastHighlight">
       {{highlighted}}
     </div>
     <podcast ng-repeat="n in data" p="n" class="podcastDir"></podcast>
-    {{data}}
-</div>
+<!--     {{data}}
+ --></div>
