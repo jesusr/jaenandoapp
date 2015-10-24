@@ -118,6 +118,12 @@ module.exports = function(grunt) {
         src: 'dist/**',
         dest: 'www/',
         expand: true
+      },
+      data: {
+        cwd: 'src/assets/',
+        src: 'data/**',
+        dest: 'dist/',
+        expand: true
       }
     },
     jshint: {

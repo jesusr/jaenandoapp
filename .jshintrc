@@ -97,7 +97,9 @@
     "rbush": true,
     "knn": true,
     "io": true,
-    "RichMarkerFactory": true
+    "RichMarkerFactory": true,
+    "window": true,
+    "jQuery": true
   } // additional predefined global variables
 }
 
