@@ -1,8 +1,18 @@
 <div class="podcastList">
-{{highlighted}}
-    <div class="podcastHighlight">
-      {{highlighted}}
+  <div ng-show="highlighted" class="podcastHighlight {{highlighted.slug}}">
+    <div ng-if="highlighted" class="featured_image">
+      <span class="close_button" ng-click="closeHighlight()">&times;</span>
+      <img ng-src="{{highlighted.featured_image.guid}}" />
     </div>
-    <podcast ng-repeat="n in data" p="n" class="podcastDir"></podcast>
-<!--     {{data}}
- --></div>
+    <div ng-if="highlighted" class="details">
+      <h2>{{highlighted.title}}<span>{{highlighted.acf.subtitulo}}</span></h2>
+      <p>{{highlighted.acf.extracto | cut:true:250}}</p>
+      <a ng-if="highlighted" href="{{highlighted.acf.songcloud}}">Escuchar</a>
+    </div>
+  </div>
+  <div ng-repeat="p in podcasts" class="podcastDir">
+    <div class="podcast box {{p.terms.category[0].slug}}" ng-click="setHighlight(p)">
+      <h2><a><span>{{p.title}}</span></a></h2>
+    </div>
+  </div>
+</div>
