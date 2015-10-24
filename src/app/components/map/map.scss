@@ -26,13 +26,13 @@
       }
       &.notvisible {
         opacity: .3;
-        stroke-width: 1px;
-        stroke: #ddd;
-        fill: white;
+        stroke-width: 2px;
+        stroke: white;
+        fill: #d3d3dc;
         &:hover {
           opacity: .3;
-          stroke-width: 1px;
-          stroke: #ddd;
+          stroke-width: 2px;
+          stroke: white;
           fill: white;
           cursor: default;
         }
