@@ -1,12 +1,42 @@
-#mapContainer {
+.mapContainer {
   height: $map-height;
   position: relative;
   width: 50%;
   float: left;
   svg {
+    overflow: hidden; 
+    position: relative; 
+    left: 0;
+    top: 10px;
     width: 70%;
     height: 327px;
     transform: scale(1.4);
     transform-origin: 0 0;
+    path {
+      cursor: pointer;
+      opacity: 0.4;
+      transition: 1s all ease-in-out;
+      &:hover {
+        opacity: 1 !important;
+        transition: 1s all ease-in-out;
+      }
+      &.selected {
+        opacity: 1 !important;
+        transition: 1s all ease-in-out; 
+      }
+      &.notvisible {
+        opacity: .3;
+        stroke-width: 1px;
+        stroke: #ddd;
+        fill: white;
+        &:hover {
+          opacity: .3;
+          stroke-width: 1px;
+          stroke: #ddd;
+          fill: white;
+          cursor: default;
+        }
+      }
+    }
   }
 }

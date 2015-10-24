@@ -5,8 +5,7 @@
       link: function() {
       },
       controller: 'mapCtrl',
-      templateUrl: '/app/components/map/map.html',
-      scope: {}
+      templateUrl: '/app/components/map/map.html'
     };
   };
 
