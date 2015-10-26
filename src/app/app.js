@@ -7,8 +7,12 @@
     'app.home',
     'app.map',
     'app.podcast',
+    'app.overPlayer',
     // vendors
-    'ngRoute'
+    'ngAnimate',
+    'ngAudio',
+    'ngRoute',
+    'ngSanitize'
   ]);
 })();
 
