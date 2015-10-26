@@ -15,7 +15,10 @@
   "dependencies": {
     "angular": "*",
     "jquery": "*",
-    "angular-route": "~1.4.7"
+    "angular-route": "~1.4.7",
+    "angular-audio": "~1.7.1",
+    "angular-animate": "~1.4.7",
+    "angular-sanitize": "~1.4.7"
   },
   "exportOverrides": {
     "bootstrap-css": {

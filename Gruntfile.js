@@ -208,7 +208,9 @@ module.exports = function(grunt) {
         dest: 'dist/libs.js',
         cssDest: 'dist/libs.css',
         dependencies: {
-          'angular-route': 'angular'
+          'angular-route': 'angular',
+          'angular-soundmanager2': 'angular',
+          'angular-animate': 'angular'
         },
         bowerOptions: {
           relative: false
