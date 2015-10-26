@@ -1,2 +1,31 @@
-<map></map>
-<podcast-list></podcast-list>
+<div ng-if="podcastDetailed" class="podcastDetail">
+  <span class="close_button" ng-click="closeDetail()">&times;</span>
+  <h1>{{podcastDetailed.title}} <span>{{podcastDetailed.acf.subtitulo}}</span></h1>
+  <div class="article">
+    <div class="img" style="background-image: url({{podcastDetailed.featured_image.attachment_meta.sizes.thumbnail.url}});">  
+    </div>
+    <div class="aside">
+      <div class="actions">
+        <a class="play negative" ng-click="playThis(podcastDetailed.acf.songcloud, podcastDetailed.title + ', ' + podcastDetailed.acf.subtitulo)">
+          Escuchar
+        </a>
+        <a ng-click="">Compartir</a>
+      </div>
+      <ul>
+        <li>Comarca de {{podcastDetailed.acf.comarca}}</li>
+        <li>{{podcastDetailed.acf.habitantes}} habitantes</li>
+        <li>{{podcastDetailed.acf.altitud}} metros de altitud</li>
+        <li>{{podcastDetailed.acf.superficie}} kilometros cuadrados</li>
+        <li>{{podcastDetailed.acf.distancia}} kilometros a Jaén capital</li>
+        <li ng-bind-html="podcastDetailed.acf.actividad"></li>
+      </ul>
+    </div>
+    <div ng-bind-html="podcastDetailed.acf.texto_completo" class="text">
+    </div>
+  </div>
+  <a class="top_button" ng-click="goToTop()">Top</a>
+</div>
+<div class="main">
+  <map></map>
+  <podcast-list></podcast-list>
+</div>

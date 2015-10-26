@@ -2,7 +2,7 @@
   'use strict';
   var homeCtrl, config;
 
-  homeCtrl = function(podcastServ, $scope) {
+  homeCtrl = function(podcastServ, $scope, $rootScope) {
     podcastServ.load(function(data) {
       var l, i;
       $scope.podcastsById = {};
@@ -14,6 +14,23 @@
         $scope.podcastsById[data[i].terms.category[0].slug].push(data[i]);
       }
       $scope.podcasts = data;
+    });
+    $scope.podcastDetailed = null;
+    $scope.goToTop = function() {
+      var body = jQuery('html, body');
+      body.stop().animate({
+        scrollTop: 0
+      }, '500', 'swing', function() {});
+    };
+    $scope.playThis = function(p, title) {
+      $rootScope.$emit('playThis', p, title);
+    };
+    $scope.closeDetail = function() {
+      $scope.podcastDetailed = null;
+    };
+    $rootScope.$on('detailThis', function(ev, p) {
+      $scope.lastEvent = ev;
+      $scope.podcastDetailed = p;
     });
   };
 
