@@ -1,0 +1,11 @@
+<div ng-if="audio !== null" class="overlayPlayer">
+    <span ng-click="close()" class="close_button">&times;</span>
+    <div class="playerPodcast">
+      <h2>{{title}}</h2>
+      <a class="play" ng-click='playSong()'>Play</a>
+      <a class="pause" ng-click='pauseSong()'>Pause</a>
+      <a class="stop" ng-click='stopSong()'>Stop</a>
+      <a class="mute" ng-click='audio.muting = !audio.muting'>Mute</a>
+      <input class="form-control ng-pristine ng-untouched ng-valid" type="range" min="0" max="1" step="0.01" ng-model="audio.progress">
+    </div>
+</div>
