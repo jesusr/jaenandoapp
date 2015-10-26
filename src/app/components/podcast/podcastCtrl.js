@@ -45,6 +45,12 @@
         $scope.setElementHigh(null);
       }
     };
+    $scope.play = function(p, title) {
+      $rootScope.$emit('playThis', p, title);
+    };
+    $scope.detail = function(p) {
+      $rootScope.$emit('detailThis', p);
+    };
     $scope.closeHighlight = function() {
       $scope.highlighted = null;
       $scope.isHigh = null;

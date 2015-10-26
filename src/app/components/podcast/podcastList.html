@@ -7,7 +7,8 @@
     <div ng-if="highlighted" class="details">
       <h2>{{highlighted.title}}<span>{{highlighted.acf.subtitulo}}</span></h2>
       <p>{{highlighted.acf.extracto | cut:true:250}}</p>
-      <a ng-if="highlighted" href="{{highlighted.acf.songcloud}}">Escuchar</a>
+      <a ng-if="highlighted" ng-click="play(highlighted.acf.songcloud, highlighted.title + ', ' + highlighted.acf.subtitulo)">Escuchar</a>
+      <a ng-if="highlighted" ng-click="detail(highlighted)">Ver</a>
     </div>
   </div>
   <div ng-repeat="p in podcasts" class="podcastDir">
