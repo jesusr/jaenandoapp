@@ -4,7 +4,7 @@
     .service('mapServ', function($http) {
       return {
         load: function(callback) {
-          $http.get('/dist/data/data.json').success(function(data) {
+          $http.get('dist/data/data.json').success(function(data) {
             window.console.log(data);
             callback(data);
           });
