@@ -11,9 +11,11 @@
       <a ng-if="highlighted" ng-click="detail(highlighted)">Ver</a>
     </div>
   </div>
-  <div ng-repeat="p in podcasts" class="podcastDir">
-    <div class="podcast box {{p.terms.category[0].slug}}" ng-click="setHighlight(p)">
-      <h2><a><span>{{p.title}}</span></a></h2>
+  <div class="box_list">
+    <div ng-repeat="p in podcasts" class="podcastDir">
+      <div class="podcast box {{p.terms.category[0].slug}}" ng-click="setHighlight(p)">
+        <h2><a><span>{{p.title}}</span></a></h2>
+      </div>
     </div>
   </div>
 </div>

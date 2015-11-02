@@ -1,17 +1,20 @@
 .mapContainer {
   height: $map-height;
   position: relative;
-  width: 50%;
+  width: 99%;
   float: left;
+  transition: 1s all ease-in-out;
   svg {
     overflow: hidden; 
     position: relative; 
     left: 0;
     top: 10px;
-    width: 70%;
+    width: 50%;
     height: 327px;
     transform: scale(1.4);
     transform-origin: 0 0;
+    margin-left: 25%;
+    transition: 1s all ease-in-out;
     path {
       cursor: pointer;
       opacity: 0.4;
@@ -37,6 +40,15 @@
           cursor: default;
         }
       }
+    }
+  }
+  &.shareView {
+    width: 50%;
+    transition: 1s all ease-in-out;
+    svg {
+      margin-left: 0;
+      width: 70%;
+      transition: 1s all ease-in-out;
     }
   }
 }

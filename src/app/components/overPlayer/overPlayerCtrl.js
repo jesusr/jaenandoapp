@@ -10,6 +10,7 @@
       $scope.initSong(p);
     });
     $scope.audio = null;
+    $scope.minimal = false;
     $rootScope.$on('stopAudio', function(ev) {
       $scope.lastEvent = ev;
       $scope.stopSong();
@@ -19,7 +20,6 @@
         $scope.audio.stop();
       }
       $scope.audio = ngAudio.load(p);
-      //$scope.audio.play();
     };
     $scope.playSong = function() {
       $scope.audio.play();

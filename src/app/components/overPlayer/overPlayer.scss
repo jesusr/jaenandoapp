@@ -8,25 +8,88 @@
   background-color: $primary-color;
   padding: 1em;
   box-shadow: 0px 0px 5px #888;
-  .close_button {
+  transition: .5s all ease-in-out;
+  .close_button, .minimal_button {
     color: #fafafa;
     border-color: #fafafa;
+    transition: .5s all ease-in-out;
+    transform: rotate(0deg);
   }
   .playerPodcast {
     h2 {
-      font-size: 1.5em;
+      font-size: 1.3em;
       color: #fafafa;
       font-family: Open Sans;
       padding-bottom: .3em;
       padding-right: 3em;
+      transition: .5s all ease-in-out;
+    }
+  }
+  &.minimal {
+    width: 300px;
+    padding: .5em;
+    transition: .5s all ease-in-out;
+    .close_button {
+      top: 5px;
+      right: 5px;
+    }
+    .minimal_button {
+      top: 5px;
+      right: 25px;
+      transform: rotate(90deg);
+      line-height: 0.3em;
+      font-size: 2em;
+    }
+    .playerPodcast {
+      transition: .5s all ease-in-out;
+      h2 {
+        font-size: .8em;
+        padding: 0;
+        padding-bottom: .8em;
+        transition: .5s all ease-in-out;
+      }
+      .play, .pause, .mute, .stop {
+        display: inline-block;
+        float: left;
+        transition: .5s all ease-in-out;
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+      }
+      .play:before {
+        border-width: 7px 0 7px 10px;
+      }
+      .pause:before {
+        width: 3px;
+        height: calc(100%/1.9);
+        box-shadow: -3px 0 #fafafa,3px 0 #fafafa;
+      }
+      .mute {
+        font-size: .2em;
+      }
+      input[type=range] {
+        height: 5px;
+        width: 150px;
+        float: left;
+        top: 6px;
+        position: relative;
+        display: inline-block;
+        transition: .5s all ease-in-out;
+      }
+      input[type=range]::-webkit-slider-thumb, input[type=range]::-moz-range-thumb, input[type=range]::-ms-thumb {
+        width: 5px;
+        height: 5px;
+        transition: .5s all ease-in-out;
+      }
     }
   }
 }
 input[type=range] {
   -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
-  width: 100%; /* Specific width is requi$primary-color for Firefox. */
+  width: 100%; /* Specific width is required for Firefox. */
   background-color: #efefef;
   height: 9px;
+  transition: .5s all ease-in-out;
 }
 
 input[type=range]::-webkit-slider-thumb {

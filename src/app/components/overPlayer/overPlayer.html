@@ -1,5 +1,6 @@
-<div ng-if="audio !== null" class="overlayPlayer">
+<div ng-if="audio !== null" class="overlayPlayer" ng-class="minimal ? 'minimal' : 'not_minimal'">
     <span ng-click="close()" class="close_button">&times;</span>
+    <span ng-click="minimal = !minimal" class="minimal_button minimal_button_{{minimal}}">-</span>
     <div class="playerPodcast">
       <h2>{{title}}</h2>
       <a class="play" ng-click='playSong()'>Play</a>

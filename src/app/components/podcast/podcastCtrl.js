@@ -28,7 +28,12 @@
       $scope.isHigh = p;
     };
     $scope.setHighlight = function(p) {
-      var elem, elems, l, i, toggle;
+      var elem, elems, l, i, toggle, mapContainer;
+      mapContainer = document.querySelector('.mapContainer');
+      window.console.log(mapContainer.className);
+      if (mapContainer.className.indexOf('shareView') < 0) {
+        mapContainer.className += ' shareView';
+      }
       elem = document.querySelector('.' + p.terms.category[0].slug);
       elems = document.querySelectorAll('.podcast');
       toggle = elem.className.indexOf('highlight') > 0;
@@ -52,8 +57,21 @@
       $rootScope.$emit('detailThis', p);
     };
     $scope.closeHighlight = function() {
+      var mapContainer, arr, i;
       $scope.highlighted = null;
       $scope.isHigh = null;
+      mapContainer = document.querySelector('.mapContainer');
+      window.console.log(mapContainer.className.indexOf('shareView'));
+      if (mapContainer.className.indexOf('shareView') >= 0) {
+        arr = mapContainer.className.split(' ');
+        window.console.log(arr);
+        for (i = arr.length - 1; i >= 0; i--) {
+          if (arr[i] === 'shareView') {
+            arr[i] = '';
+          }
+        }
+        mapContainer.className = arr.join(' ');
+      }
       $rootScope.$emit('setElementHighBoxEvent', null);
     };
     init();

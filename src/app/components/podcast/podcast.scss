@@ -32,22 +32,28 @@
     &:first-child {
     }
   }
+  .box_list {
+    clear: both;
+    width: 100%;
+  }
   .podcastHighlight {
     background-color: rgba($primary-color, .8);
     width: 50%;
     height: $map-height;
-    position: relative;
     box-sizing: border-box;
-    display: inline-block;
     transition: all 0.5s ease-in-out;
     border-radius: 10px 10px 0 0;
     transform: translateX(0);
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: 1;
+    transition: 1s all ease-in-out .5s;
     &.ng-hide {
-      height: 0;
-      padding: 0;
-      border: 0;
+      opacity: 0;
       display: inline-block !important;
       transform: translateX(900px);
+      transition: 1s all ease-in-out;
     }
     .featured_image {
       overflow: hidden;
@@ -205,7 +211,7 @@
   //   }
   // }
 }
-span.close_button {
+span.close_button, span.minimal_button {
   position: absolute;
   display: block;
   width: 18px;
@@ -224,4 +230,8 @@ span.close_button {
     color: #fafafa;
     transition: 1s all ease-in-out;
   }
+}
+span.minimal_button {
+  top: 1em;
+  right: 2.5em;
 }
