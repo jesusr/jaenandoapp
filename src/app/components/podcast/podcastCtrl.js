@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  var podcastCtrl = function($scope, $rootScope) {
+  var podcastCtrl = function($scope, $rootScope, $timeout) {
     function init() {}
     $scope.podcasts = $scope.$parent.podcasts;
     $scope.podcastsById = $scope.$parent.podcastsById;
@@ -61,7 +61,6 @@
       $scope.highlighted = null;
       $scope.isHigh = null;
       mapContainer = document.querySelector('.mapContainer');
-      window.console.log(mapContainer.className.indexOf('shareView'));
       if (mapContainer.className.indexOf('shareView') >= 0) {
         arr = mapContainer.className.split(' ');
         window.console.log(arr);
@@ -70,7 +69,9 @@
             arr[i] = '';
           }
         }
-        mapContainer.className = arr.join(' ');
+        $timeout(function() {
+          mapContainer.className = arr.join(' ');
+        }, 0);
       }
       $rootScope.$emit('setElementHighBoxEvent', null);
     };
