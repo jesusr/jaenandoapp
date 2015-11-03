@@ -29,9 +29,7 @@
     });
     $scope.select = function(id) {
       $scope.highPathId = id;
-      window.console.log(id);
       $rootScope.$emit('setElementHighEvent', id);
-      window.console.log($scope.highPathId);
     };
 
     function init() {

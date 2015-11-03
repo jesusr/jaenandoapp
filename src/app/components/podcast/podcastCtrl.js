@@ -48,6 +48,7 @@
         $scope.setElementHigh(p);
       } else {
         $scope.setElementHigh(null);
+        $scope.mapClassChange();
       }
     };
     $scope.play = function(p, title) {
@@ -57,9 +58,13 @@
       $rootScope.$emit('detailThis', p);
     };
     $scope.closeHighlight = function() {
-      var mapContainer, arr, i;
       $scope.highlighted = null;
       $scope.isHigh = null;
+      $scope.mapClassChange();
+      $rootScope.$emit('setElementHighBoxEvent', null);
+    };
+    $scope.mapClassChange = function() {
+      var mapContainer, arr, i;
       mapContainer = document.querySelector('.mapContainer');
       if (mapContainer.className.indexOf('shareView') >= 0) {
         arr = mapContainer.className.split(' ');
@@ -73,7 +78,6 @@
           mapContainer.className = arr.join(' ');
         }, 0);
       }
-      $rootScope.$emit('setElementHighBoxEvent', null);
     };
     init();
   };
