@@ -25,10 +25,12 @@
     };
     $rootScope.$on('setElementHighBoxEvent', function(ev, id) {
       $scope.lastEvent = ev;
+      window.console.log(id);
       $scope.highPathId = id;
     });
     $scope.select = function(id) {
       $scope.highPathId = id;
+      window.console.log(id);
       $rootScope.$emit('setElementHighEvent', id);
     };
 

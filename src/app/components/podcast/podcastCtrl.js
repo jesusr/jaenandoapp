@@ -30,7 +30,6 @@
     $scope.setHighlight = function(p) {
       var elem, elems, l, i, toggle, mapContainer;
       mapContainer = document.querySelector('.mapContainer');
-      window.console.log(mapContainer.className);
       if (mapContainer.className.indexOf('shareView') < 0) {
         mapContainer.className += ' shareView';
       }
@@ -68,7 +67,6 @@
       mapContainer = document.querySelector('.mapContainer');
       if (mapContainer.className.indexOf('shareView') >= 0) {
         arr = mapContainer.className.split(' ');
-        window.console.log(arr);
         for (i = arr.length - 1; i >= 0; i--) {
           if (arr[i] === 'shareView') {
             arr[i] = '';

@@ -4,7 +4,7 @@
             ng-repeat="p in paths track by $index" 
             id="{{p.id}}" 
             ng-click="select(p.id)"
-            ng-class="highPathId == p.id ? 'selected' : 'unselected'; p.visible ? 'visible' : 'notvisible'" 
+            ng-class="{ 'selected' : highPathId == p.id, 'visible' : p.visible, 'notvisible' : !p.visible }" 
             fill="#bfc19c" 
             stroke="#000000" 
             stroke-width="0" 
