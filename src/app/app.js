@@ -4,6 +4,7 @@
     'app.filters',
     'app.services',
     'app.navMenu',
+    'app.footer',
     'app.home',
     'app.map',
     'app.podcast',
