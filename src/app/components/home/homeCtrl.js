@@ -28,8 +28,17 @@
     $scope.closeDetail = function() {
       $scope.podcastDetailed = null;
     };
+    $scope.galleryImageInit = function(d) {
+      var str = d;
+      window.console.log(str);
+    };
     $rootScope.$on('detailThis', function(ev, p) {
+      var galleryString, txtVar = 'texto_completo';
       $scope.lastEvent = ev;
+      galleryString = p.acf[txtVar].substring(p.acf[txtVar].indexOf('<div'), p.acf[txtVar]
+        .indexOf('</div') + 6);
+      p.acf[txtVar] = p.acf[txtVar].replace(galleryString, '');
+      $scope.galleryImageInit(galleryString);
       $scope.podcastDetailed = p;
     });
   };
