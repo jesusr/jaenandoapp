@@ -1,0 +1,33 @@
+footer { 
+    font-family: Open Sans, Helvetiva, Arial, sans-serif;
+    position: relative;
+    .container {
+        margin: 0 auto;
+        width: 90%;
+        max-width: 1200px;
+        position: relative;
+        .menu-list {
+            width: auto;
+            margin: 0 auto;
+            margin-left: $header-inner-margin;
+            ul {
+                @include horizontal-list;
+                padding-left: $header-inner-margin;
+                li {
+                    line-height: 50px;
+                    text-align: left;
+                    margin-right: 50px;
+                    a {
+                        font-weight: 500;
+                        font-size: 1.2em;
+                        text-decoration: none;
+                        color: #28400C;
+                        &:hover {
+                            color: rgba(#28400C, .7);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
