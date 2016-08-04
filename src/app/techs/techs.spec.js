@@ -29,16 +29,16 @@ var techsJson = [
 describe('techs component', function () {
   beforeEach(function () {
     angular
-      .module('fountainTechs', ['app/techs/techs.html'])
-      .component('fountainTechs', techs);
-    angular.mock.module('fountainTechs');
+      .module('jaenandoTechs', ['app/techs/techs.html'])
+      .component('jaenandoTechs', techs);
+    angular.mock.module('jaenandoTechs');
   });
-  it('should render 3 elements <fountain-tech>', angular.mock.inject(function ($rootScope, $compile, $httpBackend) {
+  it('should render 3 elements <jaenando-tech>', angular.mock.inject(function ($rootScope, $compile, $httpBackend) {
     $httpBackend.when('GET', 'app/techs/techs.json').respond(techsJson);
-    var element = $compile('<fountain-techs></fountain-techs>')($rootScope);
+    var element = $compile('<jaenando-techs></jaenando-techs>')($rootScope);
     $httpBackend.flush();
     $rootScope.$digest();
-    var techs = element.find('fountain-tech');
+    var techs = element.find('jaenando-tech');
     techs.length.should.equal(3);
   }));
 });
